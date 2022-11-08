@@ -23,7 +23,7 @@ print(poss_combination("123"))
 # In[58]:
 
 
-#Method creation of removing b letter
+#Method creation of removing letter
 class subham_remove:
     def __init__(self,subh_method):
         self.subh_method=subh_method
