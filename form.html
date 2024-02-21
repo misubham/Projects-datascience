@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'laiqa.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #b42d61;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #021c91;
+        }
+    </style>
+    <title>LAIQA WELLNESS</title>
+</head>
+
+<body>
+    <form method="post" action="{% url 'main' %}">
+        {% csrf_token %}
+        <h1>| Match Your Persona |</h1>
+
+        <label for="bmi">Body Mass Index(BMI):</label>
+        <select name="bmi" id="bmi">
+            <option value="Normal">Normal</option>
+            <option value="Obese">Obese</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="injury">Injury:</label>
+        <select name="injury" id="injury">
+            <option value="None">None</option>
+            <option value="Yes">Yes</option>
+        </select>
+
+        <label for="core_strength">Core Strength:</label>
+        <select name="core_strength" id="core_strength">
+            <option value="Normal">Normal</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="flexibility">Flexibility:</label>
+        <select name="flexibility" id="flexibility">
+            <option value="Normal">Normal</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <input type="submit" value="SUBMIT">
+    </form>
+</body>
+
+</html>
